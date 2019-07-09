@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template
+
 app = Flask(__name__)
 
-@app.route('/<name>')
-def hello(name):
-    return '<h1>考研倒计时:166天</h1><img src="http://helloflask.com/totoro.gif"><h1>考研加油%s</h1>' % name
+@app.route('/')
+def hello():
+    return render_template('index.html')
